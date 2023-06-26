@@ -192,7 +192,7 @@ func un_floor()->void:
 func state_normal()->void:
 	substate.call();
 	_handle_physics(temp_delta);
-	if(!is_floored): movement.y += 0.2;
+	if(!is_floored): movement.y += current_physics.gravity;
 
 func substate_normal()->void:
 	if(Input.is_action_just_pressed("jump") && !is_ceilinged):
